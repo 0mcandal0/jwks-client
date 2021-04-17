@@ -61,6 +61,7 @@ pub struct KeyStore {
     refresh_time: Option<SystemTime>,
 }
 
+#[derive(Copy, Clone)]
 impl KeyStore {
     pub fn new() -> KeyStore {
         let key_store = KeyStore {
