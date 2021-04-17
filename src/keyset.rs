@@ -62,6 +62,21 @@ pub struct KeyStore {
     refresh_time: Option<SystemTime>,
 }
 
+impl Copy for KeyStore {}
+
+impl Clone for KeyStore {
+    fn clone(&self) -> Self {
+        KeyStore {
+            key_url: self.key_url.clone(),
+            keys: self.keys.clone(),
+            refresh_interval: self.refresh_interval.clone(),
+            load_time: self.load_time.clone(),
+            expire_time: self.expire_time.clone(),
+            refresh_time: self.refresh_time.clone(),            
+        }
+    }
+}
+
 impl KeyStore {
     pub fn new() -> KeyStore {
         let key_store = KeyStore {
