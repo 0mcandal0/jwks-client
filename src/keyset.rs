@@ -52,7 +52,7 @@ impl Clone for JwtKey {
     }
 }
 
-#[derive(Copy, Clone)]
+#[derive(Clone)]
 pub struct KeyStore {
     key_url: String,
     keys: Vec<JwtKey>,
@@ -61,8 +61,6 @@ pub struct KeyStore {
     expire_time: Option<SystemTime>,
     refresh_time: Option<SystemTime>,
 }
-
-impl Copy for KeyStore {}
 
 impl Clone for KeyStore {
     fn clone(&self) -> Self {
