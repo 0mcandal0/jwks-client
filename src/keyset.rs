@@ -74,6 +74,8 @@ impl Clone for KeyStore {
     }
 }
 
+impl Copy for KeyStore {}
+
 impl KeyStore {
     pub fn new() -> KeyStore {
         let key_store = KeyStore {
