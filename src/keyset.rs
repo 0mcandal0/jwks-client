@@ -52,7 +52,6 @@ impl Clone for JwtKey {
     }
 }
 
-#[derive(Clone)]
 pub struct KeyStore {
     key_url: String,
     keys: Vec<JwtKey>,
