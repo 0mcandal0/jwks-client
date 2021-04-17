@@ -52,7 +52,7 @@ impl Clone for JwtKey {
     }
 }
 
-#[derive(Copy, Clone)]
+#[derive(Clone)]
 pub struct KeyStore {
     key_url: String,
     keys: Vec<JwtKey>,
@@ -73,10 +73,6 @@ impl Clone for KeyStore {
             refresh_time: self.refresh_time.clone(),            
         }
     }
-}
-
-impl Copy for KeyStore {
-    
 }
 
 impl KeyStore {
